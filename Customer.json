@@ -1,0 +1,25 @@
+{
+    "employees": [{
+        "id": 1,
+        "name": "ND",
+        "city": "Mumbai",
+        "gender": "Male",
+        "department": "Web",
+        "Address": [{ "Add1": "Hyd", "Add2": "AP" }, { "Add1": "Hyd", "Add2": "AP" }, { "Add1": "Hyd", "Add2": "AP" }],
+        "Contact": [{ "Phone1": "8121178216", "Phone2": "9132994244" }, { "Phone1": "8121178216", "Phone2": "9132994244" }, { "Phone1": "8121178216", "Phone2": "9132994244" }]
+    }, {
+        "id": 2,
+        "name": "Joy",
+        "city": "Delhi",
+        "gender": "Male",
+        "department": "DB",
+        "Address": ["Hyd", "AP"]
+    }, {
+        "id": 3,
+        "name": "Jack",
+        "city": "Kolkata",
+        "gender": "Male",
+        "department": "Web",
+        "Address": ["Hyd", "AP"]
+    }]
+}

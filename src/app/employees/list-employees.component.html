@@ -1,0 +1,28 @@
+<h3 class="first">Basic</h3>
+<p-dataTable [value]="employees" selectionMode="single" [(selection)]="selectedCar" (onRowSelect)="onRowSelect($event)" [paginator]="true" [rows]="15">
+    <p-header>
+        <div class="ui-helper-clearfix">
+            <button type="button" pButton icon="pi pi-plus" iconPos="left" label="Add" style="float:right"></button>
+        </div>
+    </p-header>
+    <p-column field="id" header="id"></p-column>
+    <p-column field="name" header="name"></p-column>
+    <p-column field="city" header="city"></p-column>
+    <p-column field="gender" header="gender"></p-column>
+    <p-column field="department" header="department"></p-column>
+    <p-column styleClass="col-button">
+        <ng-template let-employee="rowData" pTemplate="body">
+            <button type="button" pButton icon="pi pi-refresh" (click)="SelectedEmp(employee)"></button>
+        </ng-template>
+    </p-column>
+    <p-column styleClass="">
+        <ng-template let-employee="rowData" pTemplate="body">
+            <button type="button" pButton icon="pi pi-trash" class="ui-button-danger"></button>
+        </ng-template>
+    </p-column>
+</p-dataTable>
+<p-dialog header="Employee Detail" [(visible)]="displayDialog" [modal]="true" [responsive]="true" [width]="550" [minWidth]="200" [minY]="70" [maximizable]="true" [baseZIndex]="1000">
+    <div *ngIf="employee">
+        <app-edit-employee [Employee]="employee" [display]="displayDialog"></app-edit-employee>
+    </div>
+</p-dialog>

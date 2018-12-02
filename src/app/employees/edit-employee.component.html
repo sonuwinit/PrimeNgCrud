@@ -1,0 +1,65 @@
+<form>
+    <div class="form-group">
+        <div class="ui-inputgroup">
+            <span class="ui-float-label">
+                    <input id="name" type="text" size="30" pInputText [(ngModel)]="Employee.name" name="Name"> 
+                    <label for="name">Name</label>
+                    <span class="ui-inputgroup-addon"><i class="pi pi-user"></i></span>
+            </span>
+        </div>
+        <br>
+        <div class="ui-inputgroup">
+            <span class="ui-float-label">
+                    <input id="city" type="text" size="30" pInputText [(ngModel)]="Employee.city" name="city"> 
+                    <label for="city">city</label>
+                    <span class="ui-inputgroup-addon"><i class="pi pi-user"></i></span>
+            </span>
+        </div>
+        <br>
+        <div class="ui-inputgroup">
+            <span class="ui-float-label">
+                    <input id="gender" type="text" size="30" pInputText [(ngModel)]="Employee.gender" name="gender"> 
+                    <label for="gender">gender</label>
+                    <span class="ui-inputgroup-addon"><i class="pi pi-user"></i></span>
+            </span>
+        </div>
+        <br>
+        <div class="ui-inputgroup">
+            <span class="ui-float-label">
+                    <input id="department" type="text" size="30" pInputText [(ngModel)]="Employee.department" name="department"> 
+                    <label for="department">department</label>
+                    <span class="ui-inputgroup-addon"><i class="pi pi-user"></i></span>
+            </span>
+        </div>
+    </div>
+    <div class="form-group">
+        <button pButton type="button" (click)="ShowAddress()" label="Show Address" class="ui-button-info"></button>
+    </div>
+    <p-dialog header="Employee Address" [(visible)]="displayAddress" [modal]="true" [responsive]="true" [width]="550" [minWidth]="200" [minY]="70" [maximizable]="true">
+        <div class="form-group">
+            <button pButton type="button" (click)="AddAddress()" label="Add Address" class="ui-button-info"></button>
+            <app-employee-address *ngFor="let Address of Employee.Address" [Address]="Address"></app-employee-address>
+        </div>
+        <p-footer>
+            <button type="button" pButton icon="pi pi-save" (click)="display=false" label="Save"></button>
+            <button type="button" pButton icon="pi pi-close" (click)="display=false" label="Cancel" class="ui-button-secondary"></button>
+        </p-footer>
+    </p-dialog>
+    <div class="form-group">
+        <button pButton type="button" (click)="ShowContact()" label="Show Contact" class="ui-button-info"></button>
+    </div>
+    <p-dialog header="Employee Contact" [(visible)]="displayContact" [modal]="true" [responsive]="true" [width]="550" [minWidth]="200" [minY]="70" [maximizable]="true">
+        <div class="form-group">
+            <button pButton type="button" (click)="AddContact()" label="Add Contact" class="ui-button-info"></button>
+            <app-employee-contact *ngFor="let Contact of Employee.Contact" [Contact]="Contact"></app-employee-contact>
+        </div>
+        <p-footer>
+            <button type="button" pButton icon="pi pi-save" (click)="display=false" label="Save"></button>
+            <button type="button" pButton icon="pi pi-close" (click)="display=false" label="Cancel" class="ui-button-secondary"></button>
+        </p-footer>
+    </p-dialog>
+</form>
+<p-footer>
+    <button type="button" pButton icon="pi pi-check" (click)="display=false" label="Yes"></button>
+    <button type="button" pButton icon="pi pi-close" (click)="display=false" label="No" class="ui-button-secondary"></button>
+</p-footer>
